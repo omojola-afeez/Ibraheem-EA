@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ibraheem Educational Academy - Hifzul Qur'an School</title>
+<meta name="description" content="Quran memorization school for children aged 6+ in Ikorodu. Classes Saturday to Wednesday, 6–8PM. Join Ibraheem Educational Academy today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root {
+    --green: #1B4D3E;
+    --green-mid: #2D5A4A;
+    --green-light: #3D7A62;
+    --gold: #C9A959;
+    --gold-light: #E2C97A;
+    --cream: #F5F1E8;
+    --cream-dark: #EDE8DA;
+    --text: #1A2A1E;
+    --text-muted: #4A6358;
+    --white: #FFFFFF;
+    --shadow: 0 4px 32px rgba(27,77,62,0.13);
+    --shadow-deep: 0 8px 48px rgba(27,77,62,0.22);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* GEOMETRIC PATTERN SVG */
+  .geo-bg {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg fill='none' stroke='%23C9A95918' stroke-width='0.8'%3E%3Cpolygon points='40,2 78,20 78,60 40,78 2,60 2,20'/%3E%3Cpolygon points='40,14 66,26 66,54 40,66 14,54 14,26'/%3E%3Cline x1='40' y1='2' x2='40' y2='78'/%3E%3Cline x1='2' y1='20' x2='78' y2='60'/%3E%3Cline x1='78' y1='20' x2='2' y2='60'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(27,77,62,0.97);
+    backdrop-filter: blur(12px);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 68px;
+    border-bottom: 1px solid rgba(201,169,89,0.3);
+    transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 4px 32px rgba(0,0,0,0.3); }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none;
+  }
+  .nav-logo-icon {
+    width: 42px; height: 42px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; color: var(--green);
+  }
+  .nav-logo-text { display: flex; flex-direction: column; }
+  .nav-logo-text span:first-child {
+    font-family: 'Cinzel', serif;
+    font-size: 14px; font-weight: 700;
+    color: var(--gold-light); letter-spacing: 0.5px;
+    line-height: 1.1;
+  }
+  .nav-logo-text span:last-child {
+    font-family: 'Amiri', serif;
+    font-size: 13px; color: rgba(255,255,255,0.7);
+  }
+
+  .nav-links {
+    display: flex; gap: 32px; list-style: none;
+  }
+  .nav-links a {
+    color: rgba(255,255,255,0.82);
+    text-decoration: none; font-size: 14px; font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: color 0.2s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: -3px; left: 0; right: 0;
+    height: 1px; background: var(--gold);
+    transform: scaleX(0); transition: transform 0.25s;
+  }
+  .nav-links a:hover { color: var(--gold-light); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+
+  .nav-cta {
+    background: var(--gold); color: var(--green);
+    padding: 9px 20px; border-radius: 6px;
+    font-weight: 700; font-size: 13px; letter-spacing: 0.3px;
+    text-decoration: none; transition: background 0.2s, transform 0.15s;
+  }
+  .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  .hamburger {
+    display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px;
+  }
+  .hamburger span {
+    display: block; width: 24px; height: 2px;
+    background: var(--gold); border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: var(--green);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+    padding: 100px 5% 80px;
+  }
+
+  .hero-geo {
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cg fill='none' stroke='%23C9A95914' stroke-width='0.8'%3E%3Cpolygon points='60,3 117,30 117,90 60,117 3,90 3,30'/%3E%3Cpolygon points='60,20 97,38 97,82 60,100 23,82 23,38'/%3E%3Cpolygon points='60,37 77,46 77,74 60,83 43,74 43,46'/%3E%3Cline x1='60' y1='3' x2='60' y2='117'/%3E%3Cline x1='3' y1='30' x2='117' y2='90'/%3E%3Cline x1='117' y1='30' x2='3' y2='90'/%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.6;
+  }
+
+  .hero-glow {
+    position: absolute; top: -100px; right: -100px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(201,169,89,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-glow-2 {
+    position: absolute; bottom: -150px; left: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(45,90,74,0.5) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 1100px; width: 100%;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    position: relative; z-index: 1;
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(201,169,89,0.15);
+    border: 1px solid rgba(201,169,89,0.4);
+    padding: 6px 14px; border-radius: 100px;
+    font-size: 12px; font-weight: 600; color: var(--gold-light);
+    letter-spacing: 1.5px; text-transform: uppercase;
+    margin-bottom: 28px;
+    animation: fadeUp 0.8s 0.1s both;
+  }
+  .hero-badge i { font-size: 10px; }
+
+  .hero-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 700; line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 12px;
+    animation: fadeUp 0.8s 0.2s both;
+  }
+  .hero-title .gold { color: var(--gold-light); }
+
+  .hero-arabic {
+    font-family: 'Amiri', serif;
+    font-size: clamp(22px, 3vw, 32px);
+    color: rgba(201,169,89,0.8);
+    margin-bottom: 24px; direction: rtl;
+    animation: fadeUp 0.8s 0.3s both;
+  }
+
+  .hero-desc {
+    color: rgba(255,255,255,0.72);
+    font-size: 16px; line-height: 1.7;
+    margin-bottom: 40px;
+    animation: fadeUp 0.8s 0.4s both;
+  }
+
+  .hero-btns {
+    display: flex; gap: 14px; flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.5s both;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--green); padding: 14px 28px;
+    border-radius: 8px; font-weight: 700; font-size: 15px;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+    transition: all 0.2s; border: none; cursor: pointer;
+    box-shadow: 0 4px 20px rgba(201,169,89,0.3);
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 6px 28px rgba(201,169,89,0.4); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--white); padding: 13px 28px;
+    border-radius: 8px; font-weight: 600; font-size: 15px;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+    transition: all 0.2s;
+    border: 1.5px solid rgba(255,255,255,0.35);
+    cursor: pointer;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold-light); }
+
+  .hero-stats {
+    display: flex; gap: 32px; margin-top: 48px;
+    animation: fadeUp 0.8s 0.6s both;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'Cinzel', serif;
+    font-size: 28px; font-weight: 700; color: var(--gold-light);
+    display: block;
+  }
+  .stat-label { font-size: 12px; color: rgba(255,255,255,0.55); letter-spacing: 0.5px; }
+
+  .hero-right {
+    display: flex; flex-direction: column; gap: 16px;
+    animation: fadeUp 0.8s 0.4s both;
+  }
+
+  .info-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(201,169,89,0.2);
+    border-radius: 12px; padding: 20px 24px;
+    backdrop-filter: blur(8px);
+    transition: border-color 0.3s, transform 0.2s;
+  }
+  .info-card:hover { border-color: rgba(201,169,89,0.5); transform: translateX(-4px); }
+
+  .info-card-header {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 12px;
+  }
+  .info-card-icon {
+    width: 40px; height: 40px;
+    background: rgba(201,169,89,0.15);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold); font-size: 16px;
+  }
+  .info-card-title {
+    font-family: 'Cinzel', serif;
+    font-size: 14px; font-weight: 600; color: var(--gold-light);
+    letter-spacing: 0.5px;
+  }
+  .info-card-body { color: rgba(255,255,255,0.72); font-size: 14px; line-height: 1.6; }
+  .info-card-body strong { color: var(--white); }
+
+  /* SECTION COMMON */
+  section { padding: 100px 5%; }
+
+  .section-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; font-weight: 600; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .section-tag::before {
+    content: ''; width: 24px; height: 1px; background: var(--gold);
+  }
+
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(26px, 4vw, 42px); font-weight: 700;
+    line-height: 1.2; color: var(--green);
+  }
+
+  .section-sub {
+    font-size: 16px; color: var(--text-muted);
+    line-height: 1.7; margin-top: 14px;
+    max-width: 560px;
+  }
+
+  /* ABOUT */
+  .about { background: var(--white); }
+
+  .about-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  }
+
+  .about-image-block {
+    position: relative;
+  }
+  .about-image-frame {
+    background: var(--green);
+    border-radius: 16px; padding: 48px;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .about-image-frame::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg fill='none' stroke='%23C9A95918' stroke-width='0.8'%3E%3Cpolygon points='40,2 78,20 78,60 40,78 2,60 2,20'/%3E%3Cpolygon points='40,14 66,26 66,54 40,66 14,54 14,26'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  .about-arabic-large {
+    font-family: 'Amiri', serif;
+    font-size: 64px; color: var(--gold);
+    direction: rtl; line-height: 1.2;
+    position: relative; z-index: 1;
+    text-shadow: 0 4px 24px rgba(201,169,89,0.3);
+  }
+  .about-caption {
+    font-family: 'Amiri', serif;
+    color: rgba(255,255,255,0.7); font-size: 15px;
+    margin-top: 12px; position: relative; z-index: 1;
+    font-style: italic;
+  }
+
+  .about-badge-float {
+    position: absolute; bottom: -20px; right: -20px;
+    background: var(--gold); color: var(--green);
+    border-radius: 12px; padding: 16px 20px;
+    font-weight: 700; font-size: 13px;
+    box-shadow: var(--shadow-deep);
+    text-align: center;
+  }
+  .about-badge-float span { display: block; font-size: 24px; font-weight: 700; }
+
+  .about-content { display: flex; flex-direction: column; gap: 20px; }
+
+  .about-text { font-size: 16px; color: var(--text-muted); line-height: 1.75; }
+
+  .mission-vision {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px;
+  }
+  .mv-card {
+    background: var(--cream);
+    border-radius: 10px; padding: 20px;
+    border-left: 3px solid var(--gold);
+  }
+  .mv-card h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 13px; font-weight: 600;
+    color: var(--green); letter-spacing: 0.5px; margin-bottom: 8px;
+  }
+  .mv-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  /* PROGRAM */
+  .program { background: var(--cream); }
+  .program-inner { max-width: 1100px; margin: 0 auto; }
+  .program-header { margin-bottom: 56px; }
+
+  .program-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  }
+
+  .prog-card {
+    background: var(--white);
+    border-radius: 14px; padding: 32px;
+    border: 1px solid rgba(27,77,62,0.08);
+    transition: all 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .prog-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 3px; background: linear-gradient(90deg, var(--green), var(--gold));
+    transform: scaleX(0); transition: transform 0.3s;
+  }
+  .prog-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-deep); }
+  .prog-card:hover::after { transform: scaleX(1); }
+
+  .prog-icon {
+    width: 56px; height: 56px;
+    background: linear-gradient(135deg, var(--green), var(--green-light));
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .prog-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 16px; color: var(--green); margin-bottom: 12px;
+  }
+  .prog-card p { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+  .prog-card .prog-detail {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13px; font-weight: 600; color: var(--green);
+    margin-top: 16px; padding-top: 16px;
+    border-top: 1px solid var(--cream-dark);
+  }
+  .prog-card .prog-detail i { color: var(--gold); width: 14px; }
+
+  .location-block {
+    margin-top: 48px;
+    background: var(--green);
+    border-radius: 16px; overflow: hidden;
+    display: grid; grid-template-columns: 1fr 1fr;
+  }
+  .location-info {
+    padding: 40px;
+    display: flex; flex-direction: column; justify-content: center; gap: 20px;
+  }
+  .location-info h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 20px; color: var(--gold-light);
+  }
+  .location-detail {
+    display: flex; align-items: flex-start; gap: 14px;
+    color: rgba(255,255,255,0.78); font-size: 14px; line-height: 1.6;
+  }
+  .location-detail i { color: var(--gold); margin-top: 2px; width: 16px; }
+  .map-frame {
+    min-height: 280px;
+    background: rgba(255,255,255,0.05);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .map-frame iframe {
+    width: 100%; height: 100%; border: none; min-height: 280px;
+    filter: grayscale(20%) contrast(1.1);
+  }
+
+  /* WHY CHOOSE */
+  .why { background: var(--white); }
+  .why-inner { max-width: 1100px; margin: 0 auto; }
+  .why-header { margin-bottom: 56px; }
+
+  .why-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  }
+  .why-card {
+    text-align: center; padding: 36px 24px;
+    border-radius: 14px;
+    border: 1px solid rgba(27,77,62,0.08);
+    transition: all 0.3s; background: var(--cream);
+  }
+  .why-card:hover {
+    background: var(--green); border-color: var(--green);
+    transform: translateY(-6px); box-shadow: var(--shadow-deep);
+  }
+  .why-card:hover .why-icon { background: rgba(201,169,89,0.2); color: var(--gold-light); }
+  .why-card:hover h3, .why-card:hover p { color: white; }
+  .why-card:hover h3 { color: var(--gold-light); }
+
+  .why-icon {
+    width: 64px; height: 64px; margin: 0 auto 20px;
+    background: rgba(27,77,62,0.08);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; color: var(--green);
+    transition: all 0.3s;
+  }
+  .why-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 15px; color: var(--green);
+    margin-bottom: 10px; transition: color 0.3s;
+  }
+  .why-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; transition: color 0.3s; }
+
+  /* TESTIMONIALS */
+  .testimonials { background: var(--cream); }
+  .test-inner { max-width: 1100px; margin: 0 auto; }
+  .test-header { margin-bottom: 56px; }
+
+  .quran-quote {
+    background: var(--green);
+    border-radius: 16px; padding: 40px;
+    text-align: center; margin-bottom: 48px;
+    position: relative; overflow: hidden;
+  }
+  .quran-quote::before {
+    content: '"';
+    position: absolute; top: -20px; left: 24px;
+    font-size: 160px; color: rgba(201,169,89,0.08);
+    font-family: Georgia, serif; line-height: 1;
+  }
+  .quran-quote-text {
+    font-family: 'Amiri', serif;
+    font-size: clamp(18px, 2.5vw, 24px); color: var(--gold-light);
+    line-height: 1.6; position: relative; z-index: 1;
+    font-style: italic;
+  }
+  .quran-quote-source {
+    color: rgba(255,255,255,0.5); font-size: 13px; margin-top: 12px;
+    position: relative; z-index: 1;
+  }
+
+  .test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+  .test-card {
+    background: var(--white);
+    border-radius: 14px; padding: 28px;
+    border: 1px solid rgba(27,77,62,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .test-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+
+  .test-stars { color: var(--gold); font-size: 14px; margin-bottom: 14px; }
+  .test-text { font-size: 14px; color: var(--text-muted); line-height: 1.7; font-style: italic; margin-bottom: 20px; }
+  .test-author { display: flex; align-items: center; gap: 12px; }
+  .test-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--green), var(--green-light));
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold); font-weight: 700; font-size: 14px;
+  }
+  .test-name { font-weight: 600; font-size: 14px; color: var(--text); }
+  .test-role { font-size: 12px; color: var(--text-muted); }
+
+  /* FAQ */
+  .faq { background: var(--white); }
+  .faq-inner { max-width: 760px; margin: 0 auto; }
+  .faq-header { margin-bottom: 48px; }
+
+  .faq-item {
+    border-bottom: 1px solid rgba(27,77,62,0.1);
+    overflow: hidden;
+  }
+  .faq-q {
+    width: 100%; background: none; border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 22px 0; text-align: left;
+    font-size: 15px; font-weight: 600; color: var(--green);
+    font-family: 'DM Sans', sans-serif;
+    transition: color 0.2s;
+  }
+  .faq-q:hover { color: var(--gold); }
+  .faq-q i { transition: transform 0.3s; color: var(--gold); font-size: 14px; }
+  .faq-q.open i { transform: rotate(180deg); }
+  .faq-a {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s;
+    font-size: 14px; color: var(--text-muted); line-height: 1.75;
+    padding: 0;
+  }
+  .faq-a.open { max-height: 200px; padding-bottom: 20px; }
+
+  /* REGISTRATION */
+  .registration {
+    background: linear-gradient(135deg, var(--green) 0%, #0F2E22 100%);
+    position: relative; overflow: hidden;
+  }
+  .registration::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cg fill='none' stroke='%23C9A95910' stroke-width='0.8'%3E%3Cpolygon points='60,3 117,30 117,90 60,117 3,90 3,30'/%3E%3Cpolygon points='60,20 97,38 97,82 60,100 23,82 23,38'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .reg-inner {
+    max-width: 900px; margin: 0 auto;
+    position: relative; z-index: 1;
+  }
+  .reg-header { text-align: center; margin-bottom: 48px; }
+  .reg-header .section-title { color: var(--white); }
+  .reg-header .section-sub { color: rgba(255,255,255,0.65); margin: 12px auto 0; }
+
+  .reg-form {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(201,169,89,0.2);
+    border-radius: 20px; padding: 48px;
+    backdrop-filter: blur(12px);
+  }
+
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .form-full { grid-column: 1 / -1; }
+
+  .form-group { display: flex; flex-direction: column; gap: 8px; }
+  .form-group label {
+    font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.8);
+    letter-spacing: 0.3px;
+  }
+  .form-group input, .form-group select, .form-group textarea {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(201,169,89,0.2);
+    border-radius: 8px; padding: 12px 16px;
+    color: var(--white); font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    transition: border-color 0.2s, background 0.2s;
+    outline: none;
+  }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--gold); background: rgba(255,255,255,0.12);
+  }
+  .form-group select option { background: var(--green); color: var(--white); }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .form-submit {
+    text-align: center; margin-top: 32px;
+  }
+  .btn-whatsapp {
+    background: #25D366; color: white;
+    padding: 16px 40px; border-radius: 10px;
+    font-weight: 700; font-size: 16px;
+    display: inline-flex; align-items: center; gap: 10px;
+    cursor: pointer; border: none; font-family: 'DM Sans', sans-serif;
+    transition: all 0.2s;
+    box-shadow: 0 4px 24px rgba(37,211,102,0.3);
+  }
+  .btn-whatsapp:hover { background: #20bc5a; transform: translateY(-2px); box-shadow: 0 6px 32px rgba(37,211,102,0.4); }
+
+  /* CONTACT */
+  .contact { background: var(--cream); }
+  .contact-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+  }
+
+  .contact-info { display: flex; flex-direction: column; gap: 32px; }
+
+  .contact-item {
+    display: flex; align-items: flex-start; gap: 16px;
+  }
+  .contact-item-icon {
+    width: 48px; height: 48px;
+    background: var(--green); border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold); font-size: 18px; flex-shrink: 0;
+  }
+  .contact-item-body h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 14px; color: var(--green); margin-bottom: 6px;
+  }
+  .contact-item-body p, .contact-item-body a {
+    font-size: 14px; color: var(--text-muted); line-height: 1.6;
+    text-decoration: none;
+  }
+  .contact-item-body a:hover { color: var(--green); }
+
+  .contact-form-card {
+    background: var(--white);
+    border-radius: 16px; padding: 40px;
+    box-shadow: var(--shadow);
+  }
+  .contact-form-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 20px; color: var(--green); margin-bottom: 28px;
+  }
+  .contact-form .form-group label { color: var(--text-muted); }
+  .contact-form .form-group input,
+  .contact-form .form-group textarea {
+    background: var(--cream);
+    border: 1px solid rgba(27,77,62,0.15);
+    color: var(--text);
+  }
+  .contact-form .form-group input::placeholder,
+  .contact-form .form-group textarea::placeholder { color: rgba(74,99,88,0.5); }
+  .contact-form .form-group input:focus,
+  .contact-form .form-group textarea:focus {
+    border-color: var(--green); background: var(--white);
+  }
+
+  /* FOOTER */
+  footer {
+    background: #0F2518;
+    padding: 60px 5% 32px;
+  }
+  .footer-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(201,169,89,0.15);
+    margin-bottom: 32px;
+  }
+  .footer-brand { display: flex; flex-direction: column; gap: 16px; }
+  .footer-brand-name {
+    font-family: 'Cinzel', serif;
+    font-size: 18px; color: var(--gold-light); font-weight: 700;
+  }
+  .footer-brand-arabic {
+    font-family: 'Amiri', serif;
+    font-size: 20px; color: rgba(201,169,89,0.6);
+    direction: rtl;
+  }
+  .footer-brand p { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.7; }
+
+  .footer-col h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 13px; color: var(--gold-light);
+    margin-bottom: 20px; letter-spacing: 0.5px;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col ul a {
+    color: rgba(255,255,255,0.5); font-size: 13px;
+    text-decoration: none; transition: color 0.2s;
+  }
+  .footer-col ul a:hover { color: var(--gold-light); }
+
+  .footer-bottom {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px;
+  }
+  .footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.35); }
+  .footer-social { display: flex; gap: 12px; }
+  .footer-social a {
+    width: 36px; height: 36px;
+    background: rgba(201,169,89,0.1);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(201,169,89,0.6); font-size: 14px;
+    text-decoration: none; transition: all 0.2s;
+  }
+  .footer-social a:hover { background: var(--gold); color: var(--green); }
+
+  /* CHATBOT */
+  .chatbot-toggle {
+    position: fixed; bottom: 28px; right: 28px; z-index: 999;
+    width: 60px; height: 60px;
+    background: var(--green);
+    border-radius: 50%; border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 32px rgba(27,77,62,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+    color: var(--gold); font-size: 22px;
+  }
+  .chatbot-toggle:hover { transform: scale(1.08); box-shadow: 0 8px 40px rgba(27,77,62,0.5); }
+
+  .chatbot-panel {
+    position: fixed; bottom: 104px; right: 28px; z-index: 998;
+    width: 360px; max-height: 520px;
+    background: var(--white);
+    border-radius: 18px;
+    box-shadow: 0 12px 60px rgba(0,0,0,0.2);
+    display: flex; flex-direction: column;
+    overflow: hidden;
+    transform: scale(0.8) translateY(20px);
+    opacity: 0; pointer-events: none;
+    transform-origin: bottom right;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .chatbot-panel.open {
+    transform: scale(1) translateY(0);
+    opacity: 1; pointer-events: all;
+  }
+  .chat-header {
+    background: var(--green); padding: 18px 20px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .chat-header-avatar {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: rgba(201,169,89,0.2);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold); font-size: 16px;
+  }
+  .chat-header-info { flex: 1; }
+  .chat-header-info h4 { color: var(--white); font-size: 15px; font-weight: 600; }
+  .chat-header-info p { color: rgba(255,255,255,0.6); font-size: 12px; }
+  .chat-header-close {
+    background: none; border: none; cursor: pointer;
+    color: rgba(255,255,255,0.5); font-size: 16px;
+    padding: 4px; transition: color 0.2s;
+  }
+  .chat-header-close:hover { color: white; }
+
+  .chat-messages {
+    flex: 1; overflow-y: auto; padding: 20px 16px;
+    display: flex; flex-direction: column; gap: 12px;
+    max-height: 340px;
+  }
+  .chat-messages::-webkit-scrollbar { width: 4px; }
+  .chat-messages::-webkit-scrollbar-thumb { background: rgba(27,77,62,0.2); border-radius: 2px; }
+
+  .chat-msg {
+    display: flex; gap: 8px; align-items: flex-end;
+  }
+  .chat-msg.user { flex-direction: row-reverse; }
+  .chat-bubble {
+    max-width: 75%; padding: 10px 14px;
+    border-radius: 16px; font-size: 13px; line-height: 1.5;
+  }
+  .chat-msg.bot .chat-bubble {
+    background: var(--cream); color: var(--text);
+    border-bottom-left-radius: 4px;
+  }
+  .chat-msg.user .chat-bubble {
+    background: var(--green); color: white;
+    border-bottom-right-radius: 4px;
+  }
+  .chat-avatar-small {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--green);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold); font-size: 11px; flex-shrink: 0;
+  }
+  .chat-typing { display: flex; gap: 4px; padding: 10px 14px; align-items: center; }
+  .chat-typing span {
+    width: 6px; height: 6px; background: var(--text-muted);
+    border-radius: 50%; animation: bounce 1.2s infinite;
+  }
+  .chat-typing span:nth-child(2) { animation-delay: 0.2s; }
+  .chat-typing span:nth-child(3) { animation-delay: 0.4s; }
+
+  .chat-quick-replies {
+    display: flex; flex-wrap: wrap; gap: 6px; padding: 0 16px 12px;
+  }
+  .quick-reply {
+    background: rgba(27,77,62,0.08); border: 1px solid rgba(27,77,62,0.15);
+    color: var(--green); padding: 6px 12px; border-radius: 100px;
+    font-size: 12px; cursor: pointer; font-family: 'DM Sans', sans-serif;
+    transition: all 0.2s;
+  }
+  .quick-reply:hover { background: var(--green); color: white; border-color: var(--green); }
+
+  .chat-input-area {
+    border-top: 1px solid rgba(27,77,62,0.08);
+    padding: 12px 16px;
+    display: flex; gap: 8px;
+  }
+  .chat-input {
+    flex: 1; background: var(--cream);
+    border: 1px solid rgba(27,77,62,0.12);
+    border-radius: 100px; padding: 10px 16px;
+    font-size: 13px; font-family: 'DM Sans', sans-serif;
+    color: var(--text); outline: none;
+    transition: border-color 0.2s;
+  }
+  .chat-input:focus { border-color: var(--green); }
+  .chat-send {
+    width: 38px; height: 38px;
+    background: var(--green); border: none;
+    border-radius: 50%; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold); font-size: 14px;
+    transition: all 0.2s;
+  }
+  .chat-send:hover { background: var(--green-light); }
+
+  /* MOBILE NAV OVERLAY */
+  .mobile-nav {
+    position: fixed; inset: 0; z-index: 999;
+    background: var(--green);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 32px;
+    transform: translateX(100%); transition: transform 0.35s ease;
+  }
+  .mobile-nav.open { transform: translateX(0); }
+  .mobile-nav a {
+    font-family: 'Cinzel', serif;
+    font-size: 20px; color: rgba(255,255,255,0.8);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .mobile-nav a:hover { color: var(--gold); }
+  .mobile-nav-close {
+    position: absolute; top: 24px; right: 5%;
+    background: none; border: none; cursor: pointer;
+    color: rgba(255,255,255,0.5); font-size: 22px;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes bounce {
+    0%, 60%, 100% { transform: translateY(0); }
+    30% { transform: translateY(-6px); }
+  }
+
+  .reveal {
+    opacity: 0; transform: translateY(32px);
+    transition: opacity 0.7s, transform 0.7s;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* COUNTER */
+  .counter-num { display: inline-block; }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 48px; text-align: center; }
+    .hero-right { max-width: 600px; margin: 0 auto; }
+    .hero-btns { justify-content: center; }
+    .hero-stats { justify-content: center; }
+    .program-grid { grid-template-columns: 1fr 1fr; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .location-block { grid-template-columns: 1fr; }
+    .about-inner { grid-template-columns: 1fr; }
+    .contact-inner { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 768px) {
+    section { padding: 72px 5%; }
+    .nav-links, .nav-cta { display: none; }
+    .hamburger { display: flex; }
+    .program-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .test-grid { grid-template-columns: 1fr; }
+    .form-grid { grid-template-columns: 1fr; }
+    .reg-form { padding: 28px; }
+    .hero-stats { gap: 20px; flex-wrap: wrap; }
+    .mission-vision { grid-template-columns: 1fr; }
+    .chatbot-panel { width: calc(100vw - 40px); right: 20px; }
+    .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+  }
+  @media (max-width: 480px) {
+    .why-grid { grid-template-columns: 1fr; }
+    .hero-btns { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon"><i class="fas fa-book-open"></i></div>
+    <div class="nav-logo-text">
+      <span>Ibraheem Academy</span>
+      <span>إبراهيم التعليمية</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#program">Program</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#registration" class="nav-cta">Register Now</a>
+  <div class="hamburger" onclick="toggleMobileNav()" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="toggleMobileNav()"><i class="fas fa-times"></i></button>
+  <a href="#about" onclick="toggleMobileNav()">About</a>
+  <a href="#program" onclick="toggleMobileNav()">Program</a>
+  <a href="#why" onclick="toggleMobileNav()">Why Us</a>
+  <a href="#testimonials" onclick="toggleMobileNav()">Testimonials</a>
+  <a href="#faq" onclick="toggleMobileNav()">FAQ</a>
+  <a href="#registration" onclick="toggleMobileNav()">Register</a>
+  <a href="#contact" onclick="toggleMobileNav()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-geo"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fas fa-star"></i>
+        Admissions Ongoing
+      </div>
+      <div class="hero-arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</div>
+      <h1 class="hero-title">
+        Now Open for<br>
+        <span class="gold">Quran Memorization</span>
+      </h1>
+      <p class="hero-desc">
+        Hifzul Qur'an classes for children aged 6 and above. Build a strong connection with the Qur'an in a peaceful, focused environment at Ibraheem Educational Academy.
+      </p>
+      <div class="hero-btns">
+        <a href="#registration" class="btn-primary">
+          <i class="fas fa-pen-to-square"></i> Register Your Child
+        </a>
+        <a href="#about" class="btn-outline">
+          <i class="fas fa-arrow-down"></i> Learn More
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num counter-num" data-target="50">0</span><span class="stat-num">+</span>
+          <div class="stat-label">Students Enrolled</div>
+        </div>
+        <div class="stat">
+          <span class="stat-num counter-num" data-target="5">0</span>
+          <div class="stat-label">Days Per Week</div>
+        </div>
+        <div class="stat">
+          <span class="stat-num counter-num" data-target="2">0</span><span class="stat-num">hrs</span>
+          <div class="stat-label">Daily Sessions</div>
+        </div>
+        <div class="stat">
+          <span class="stat-num">6</span><span class="stat-num">+</span>
+          <div class="stat-label">Age Group</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="info-card">
+        <div class="info-card-header">
+          <div class="info-card-icon"><i class="fas fa-clock"></i></div>
+          <div class="info-card-title">Class Schedule</div>
+        </div>
+        <div class="info-card-body">
+          <strong>Saturday to Wednesday</strong><br>
+          6:00 PM - 8:00 PM (Isha'i)<br>
+          <span style="color: rgba(201,169,89,0.7); font-size: 12px;">Evening sessions after school hours</span>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-header">
+          <div class="info-card-icon"><i class="fas fa-mosque"></i></div>
+          <div class="info-card-title">Location</div>
+        </div>
+        <div class="info-card-body">
+          <strong>Raodatul Jannah Mosque</strong><br>
+          Ogunnaike Estate, Second Four Square<br>
+          Erunwen, Ikorodu, Lagos
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-header">
+          <div class="info-card-icon"><i class="fas fa-child-reaching"></i></div>
+          <div class="info-card-title">Age Requirement</div>
+        </div>
+        <div class="info-card-body">
+          Open to children <strong>aged 6 and above</strong>.<br>
+          No prior memorization experience required.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-image-block reveal">
+      <div class="about-image-frame">
+        <div class="about-arabic-large">إبراهيم<br>التعليمية</div>
+        <div class="about-caption">Ibraheem Educational Academy</div>
+      </div>
+      <div class="about-badge-float">
+        <span>2024</span>
+        Est.
+      </div>
+    </div>
+    <div class="about-content reveal">
+      <div>
+        <div class="section-tag">About Us</div>
+        <h2 class="section-title">A School Built Around the Qur'an</h2>
+      </div>
+      <p class="about-text">
+        Ibraheem Educational Academy is a Quran memorization school dedicated to helping children build a lifelong bond with the Book of Allah. Our program combines structured Hifz sessions with consistent revision, all within a mosque environment that encourages focus and reverence.
+      </p>
+      <p class="about-text">
+        We believe every child has the capacity to memorize the Qur'an when given the right guidance, environment, and support. Our teachers are experienced, patient, and committed to each student's progress.
+      </p>
+      <div class="mission-vision">
+        <div class="mv-card">
+          <h4>Our Mission</h4>
+          <p>To raise a generation of Huffaz who understand, love, and live by the Qur'an from a young age.</p>
+        </div>
+        <div class="mv-card">
+          <h4>Our Vision</h4>
+          <p>To be the leading Hifz program in Ikorodu, known for producing confident and consistent memorizers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM -->
+<section class="program" id="program">
+  <div class="program-inner">
+    <div class="program-header reveal">
+      <div class="section-tag">Program Details</div>
+      <h2 class="section-title">What We Offer</h2>
+      <p class="section-sub">Our structured Hifz curriculum is designed specifically for young learners, with clear milestones and continuous support.</p>
+    </div>
+    <div class="program-grid">
+      <div class="prog-card reveal">
+        <div class="prog-icon"><i class="fas fa-book-quran"></i></div>
+        <h3>Hifzul Qur'an</h3>
+        <p>Systematic memorization of the Qur'an from Juz' 'Amma upward, with structured lesson plans tailored to each child's pace.</p>
+        <div class="prog-detail"><i class="fas fa-check-circle"></i> Core Program</div>
+      </div>
+      <div class="prog-card reveal">
+        <div class="prog-icon"><i class="fas fa-rotate"></i></div>
+        <h3>Regular Revision</h3>
+        <p>Dedicated revision sessions ensure previously memorized portions stay strong. No verse is left behind.</p>
+        <div class="prog-detail"><i class="fas fa-check-circle"></i> Daily Practice</div>
+      </div>
+      <div class="prog-card reveal">
+        <div class="prog-icon"><i class="fas fa-microphone-lines"></i></div>
+        <h3>Tajweed Training</h3>
+        <p>Students are taught proper pronunciation and recitation rules from the start, building a clean foundation.</p>
+        <div class="prog-detail"><i class="fas fa-check-circle"></i> Included</div>
+      </div>
+      <div class="prog-card reveal">
+        <div class="prog-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>Progress Tracking</h3>
+        <p>Parents receive regular updates on their child's memorization milestones, helping keep everyone aligned.</p>
+        <div class="prog-detail"><i class="fas fa-check-circle"></i> Monthly Reports</div>
+      </div>
+      <div class="prog-card reveal">
+        <div class="prog-icon"><i class="fas fa-users"></i></div>
+        <h3>Small Group Sessions</h3>
+        <p>Class sizes are kept manageable so each student gets adequate attention and recitation time every session.</p>
+        <div class="prog-detail"><i class="fas fa-check-circle"></i> Focused Learning</div>
+      </div>
+      <div class="prog-card reveal">
+        <div class="prog-icon"><i class="fas fa-medal"></i></div>
+        <h3>Recognition & Motivation</h3>
+        <p>Students who hit memorization milestones are recognized and celebrated, keeping motivation high throughout.</p>
+        <div class="prog-detail"><i class="fas fa-check-circle"></i> Student Rewards</div>
+      </div>
+    </div>
+    <div class="location-block reveal" style="margin-top: 48px;">
+      <div class="location-info">
+        <h3>Find Us Here</h3>
+        <div class="location-detail">
+          <i class="fas fa-mosque"></i>
+          <span>Raodatul Jannah Mosque, Ogunnaike Estate, Second Four Square, Erunwen, Ikorodu, Lagos State</span>
+        </div>
+        <div class="location-detail">
+          <i class="fas fa-clock"></i>
+          <span>Saturday - Wednesday<br>6:00 PM to 8:00 PM</span>
+        </div>
+        <div class="location-detail">
+          <i class="fas fa-phone"></i>
+          <span>08147409351 / 08106982055</span>
+        </div>
+      </div>
+      <div class="map-frame">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.4!2d3.52!3d6.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMzYnMDAuMCJOIDPCsDMxJzEyLjAiRQ!5e0!3m2!1sen!2sng!4v1234567890"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Ibraheem Academy Location - Ikorodu, Lagos">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section class="why" id="why">
+  <div class="why-inner">
+    <div class="why-header reveal">
+      <div class="section-tag">Why Choose Us</div>
+      <h2 class="section-title">What Sets Us Apart</h2>
+      <p class="section-sub">We don't just teach memorization. We build habits, instill love for the Qur'an, and create an environment where children thrive.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon"><i class="fas fa-brain"></i></div>
+        <h3>Focused Hifz Sessions</h3>
+        <p>Each session is structured specifically for memorization, not general Islamic studies. Every minute counts.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><i class="fas fa-user-graduate"></i></div>
+        <h3>Experienced Guidance</h3>
+        <p>Our teachers have years of experience working with children of all learning speeds and backgrounds.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><i class="fas fa-rotate-right"></i></div>
+        <h3>Consistent Revision</h3>
+        <p>Memorized portions are revisited regularly so children retain what they've learned long-term.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><i class="fas fa-leaf"></i></div>
+        <h3>Peaceful Environment</h3>
+        <p>Classes are held at a mosque, offering a calm, spiritual setting that is naturally conducive to learning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="test-inner">
+    <div class="test-header reveal">
+      <div class="section-tag">Testimonials</div>
+      <h2 class="section-title">What Parents Say</h2>
+    </div>
+    <div class="quran-quote reveal">
+      <p class="quran-quote-text">"The best among you are those who learn the Qur'an and teach it."</p>
+      <p class="quran-quote-source">- Prophet Muhammad (SAW) - Sahih Bukhari</p>
+    </div>
+    <div class="test-grid">
+      <div class="test-card reveal">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">"My son joined last term and has already memorized four surahs. The teachers are patient and always keep us updated on his progress."</p>
+        <div class="test-author">
+          <div class="test-avatar">AA</div>
+          <div>
+            <div class="test-name">Alhaja Aminat A.</div>
+            <div class="test-role">Parent of 8-year-old</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card reveal">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">"The evening timing works perfectly for us. My daughter comes home from school, rests, and then goes for class. It doesn't disrupt her schoolwork at all."</p>
+        <div class="test-author">
+          <div class="test-avatar">FS</div>
+          <div>
+            <div class="test-name">Fatimah S.</div>
+            <div class="test-role">Parent of 10-year-old</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card reveal">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">"I was worried my child was too young to start Hifz, but the teachers here know how to work with young kids. He's thriving and loves going to class."</p>
+        <div class="test-author">
+          <div class="test-avatar">MO</div>
+          <div>
+            <div class="test-name">Malam Omoniyi</div>
+            <div class="test-role">Parent of 6-year-old</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <div class="faq-header reveal">
+      <div class="section-tag">FAQ</div>
+      <h2 class="section-title">Common Questions</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What age can my child start? <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-a">Children aged 6 and above are welcome to join. We assess each child's readiness during enrollment and place them appropriately.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Does my child need to know how to read Arabic first? <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-a">Basic Qur'an reading helps but is not strictly required for enrollment. Students who cannot yet read Arabic receive foundational support alongside the memorization program.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What days are classes held? <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-a">Classes run Saturday through Wednesday, from 6:00 PM to 8:00 PM. Thursday and Friday are off-days.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How much does enrollment cost? <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-a">Please contact us directly via WhatsApp or phone to get current fee information. You can reach us on 08147409351 or 08106982055.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What should my child bring to class? <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-a">Students should bring their own Qur'an (Mushaf), a notepad, and a pen. Girls should come with their hijab. Proper Islamic attire is expected of all students.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How do I register my child? <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-a">Fill out the registration form on this page and it will send your details directly to us via WhatsApp. You can also contact us directly on 08147409351.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Is there a specific Qur'an edition required? <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-a">We recommend Hafs narration Mushaf (the most common edition in Nigeria). If you're unsure, ask us before purchase and we'll guide you.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTRATION -->
+<section class="registration" id="registration">
+  <div class="reg-inner">
+    <div class="reg-header reveal">
+      <div class="section-tag" style="color: var(--gold-light);">Admissions Open</div>
+      <h2 class="section-title">Register Your Child Today</h2>
+      <p class="section-sub">Fill the form below and your details will be sent directly to us via WhatsApp. We'll confirm your child's enrollment within 24 hours.</p>
+    </div>
+    <div class="reg-form reveal">
+      <div class="form-grid" id="regForm">
+        <div class="form-group">
+          <label>Child's Full Name *</label>
+          <input type="text" id="childName" placeholder="e.g. Abdullahi Yusuf" required>
+        </div>
+        <div class="form-group">
+          <label>Child's Age *</label>
+          <input type="number" id="childAge" placeholder="e.g. 8" min="6" max="18" required>
+        </div>
+        <div class="form-group">
+          <label>Parent / Guardian Name *</label>
+          <input type="text" id="parentName" placeholder="Your full name" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number *</label>
+          <input type="tel" id="parentPhone" placeholder="08012345678" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="parentEmail" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label>Preferred Start Date</label>
+          <input type="date" id="startDate">
+        </div>
+        <div class="form-group">
+          <label>Current Qur'an Reading Level</label>
+          <select id="quranLevel">
+            <option value="">Select level</option>
+            <option>Cannot read Arabic yet</option>
+            <option>Basic - reading with difficulty</option>
+            <option>Intermediate - reads but slowly</option>
+            <option>Fluent reader, no memorization yet</option>
+            <option>Already memorized some Juz</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Gender</label>
+          <select id="childGender">
+            <option value="">Select</option>
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+        </div>
+        <div class="form-group form-full">
+          <label>Special Requirements or Notes</label>
+          <textarea id="regNotes" placeholder="Any additional information we should know about your child..."></textarea>
+        </div>
+      </div>
+      <div class="form-submit">
+        <button class="btn-whatsapp" onclick="submitRegistration()">
+          <i class="fab fa-whatsapp"></i> Submit via WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-info reveal">
+      <div>
+        <div class="section-tag">Get in Touch</div>
+        <h2 class="section-title">Have Questions?</h2>
+        <p class="section-sub">Reach out via phone, WhatsApp, or the contact form. We typically respond within a few hours.</p>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon"><i class="fas fa-phone"></i></div>
+        <div class="contact-item-body">
+          <h4>Phone</h4>
+          <p><a href="tel:08147409351">08147409351</a></p>
+          <p><a href="tel:08106982055">08106982055</a></p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon"><i class="fab fa-whatsapp"></i></div>
+        <div class="contact-item-body">
+          <h4>WhatsApp</h4>
+          <p><a href="https://wa.me/2348147409351" target="_blank">Chat on WhatsApp - 08147409351</a></p>
+          <p style="margin-top:4px;font-size:12px;color: var(--text-muted);">WhatsApp ID: OYEWUMI001</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon"><i class="fas fa-location-dot"></i></div>
+        <div class="contact-item-body">
+          <h4>Location</h4>
+          <p>Raodatul Jannah Mosque, Ogunnaike Estate, Second Four Square, Erunwen, Ikorodu, Lagos State</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon"><i class="fas fa-clock"></i></div>
+        <div class="contact-item-body">
+          <h4>Class Hours</h4>
+          <p>Saturday - Wednesday<br>6:00 PM - 8:00 PM</p>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form-card reveal">
+      <h3>Send an Inquiry</h3>
+      <div class="contact-form">
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" id="contactName" placeholder="Full name">
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" id="contactPhone" placeholder="08012345678">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="contactEmail" placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <input type="text" id="contactSubject" placeholder="What is your inquiry about?">
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea id="contactMessage" placeholder="Your message here..."></textarea>
+          </div>
+          <button class="btn-whatsapp" style="width:100%;justify-content:center;" onclick="submitInquiry()">
+            <i class="fab fa-whatsapp"></i> Send via WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div>
+        <div class="footer-brand-name">Ibraheem Educational Academy</div>
+        <div class="footer-brand-arabic">إبراهيم التعليمية</div>
+      </div>
+      <p>A dedicated Hifzul Qur'an school for children aged 6 and above, located at Raodatul Jannah Mosque, Ikorodu, Lagos.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#program">Program</a></li>
+        <li><a href="#why">Why Choose Us</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Program</h4>
+      <ul>
+        <li><a href="#program">Hifzul Qur'an</a></li>
+        <li><a href="#program">Tajweed Training</a></li>
+        <li><a href="#program">Revision Sessions</a></li>
+        <li><a href="#registration">Enrollment</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:08147409351">08147409351</a></li>
+        <li><a href="tel:08106982055">08106982055</a></li>
+        <li><a href="https://wa.me/2348147409351" target="_blank">WhatsApp Us</a></li>
+        <li><a href="#contact">Send Inquiry</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 Ibraheem Educational Academy. All rights reserved.</p>
+    <div class="footer-social">
+      <a href="https://wa.me/2348147409351" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- CHATBOT TOGGLE -->
+<button class="chatbot-toggle" onclick="toggleChat()" id="chatToggle" title="Chat with us">
+  <i class="fas fa-comment-dots" id="chatIcon"></i>
+</button>
+
+<!-- CHATBOT PANEL -->
+<div class="chatbot-panel" id="chatPanel">
+  <div class="chat-header">
+    <div class="chat-header-avatar"><i class="fas fa-robot"></i></div>
+    <div class="chat-header-info">
+      <h4>Ibraheem Academy</h4>
+      <p>Usually replies instantly</p>
+    </div>
+    <button class="chat-header-close" onclick="toggleChat()"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="chat-messages" id="chatMessages">
+    <div class="chat-msg bot">
+      <div class="chat-avatar-small"><i class="fas fa-book-quran"></i></div>
+      <div class="chat-bubble">As-salamu alaykum! 👋 Welcome to Ibraheem Educational Academy. I can help with questions about our Hifz program, registration, schedule, and location.</div>
+    </div>
+  </div>
+  <div class="chat-quick-replies" id="quickReplies">
+    <button class="quick-reply" onclick="quickReply('How do I register?')">How to register</button>
+    <button class="quick-reply" onclick="quickReply('What are the class timings?')">Class timings</button>
+    <button class="quick-reply" onclick="quickReply('What is the age requirement?')">Age requirement</button>
+    <button class="quick-reply" onclick="quickReply('Where are you located?')">Location</button>
+    <button class="quick-reply" onclick="quickReply('What does my child need to bring?')">What to bring</button>
+  </div>
+  <div class="chat-input-area">
+    <input class="chat-input" type="text" id="chatInput" placeholder="Type your question..." onkeydown="if(event.key==='Enter')sendChat()">
+    <button class="chat-send" onclick="sendChat()"><i class="fas fa-paper-plane"></i></button>
+  </div>
+</div>
+
+<script>
+// NAV SCROLL
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// MOBILE NAV
+function toggleMobileNav() {
+  document.getElementById('mobileNav').classList.toggle('open');
+}
+
+// REVEAL ON SCROLL
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting) { e.target.classList.add('visible'); }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// COUNTER
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target);
+  let current = 0;
+  const step = Math.ceil(target / 40);
+  const timer = setInterval(() => {
+    current = Math.min(current + step, target);
+    el.textContent = current;
+    if(current >= target) clearInterval(timer);
+  }, 40);
+}
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting) {
+      e.target.querySelectorAll('.counter-num[data-target]').forEach(animateCounter);
+      counterObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+const heroStats = document.querySelector('.hero-stats');
+if(heroStats) counterObserver.observe(heroStats);
+
+// FAQ
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const isOpen = answer.classList.contains('open');
+  document.querySelectorAll('.faq-a.open').forEach(a => a.classList.remove('open'));
+  document.querySelectorAll('.faq-q.open').forEach(b => b.classList.remove('open'));
+  if(!isOpen) { answer.classList.add('open'); btn.classList.add('open'); }
+}
+
+// WHATSAPP REGISTRATION
+function submitRegistration() {
+  const childName = document.getElementById('childName').value.trim();
+  const childAge = document.getElementById('childAge').value.trim();
+  const parentName = document.getElementById('parentName').value.trim();
+  const parentPhone = document.getElementById('parentPhone').value.trim();
+  const parentEmail = document.getElementById('parentEmail').value.trim();
+  const startDate = document.getElementById('startDate').value;
+  const quranLevel = document.getElementById('quranLevel').value;
+  const gender = document.getElementById('childGender').value;
+  const notes = document.getElementById('regNotes').value.trim();
+
+  if(!childName || !childAge || !parentName || !parentPhone) {
+    alert('Please fill in all required fields (Child Name, Age, Parent Name, Phone).');
+    return;
+  }
+
+  const msg = `*NEW REGISTRATION - Ibraheem Educational Academy*\n\n` +
+    `*Child's Name:* ${childName}\n` +
+    `*Age:* ${childAge}\n` +
+    `*Gender:* ${gender || 'Not specified'}\n` +
+    `*Parent/Guardian:* ${parentName}\n` +
+    `*Phone:* ${parentPhone}\n` +
+    `*Email:* ${parentEmail || 'Not provided'}\n` +
+    `*Qur'an Level:* ${quranLevel || 'Not specified'}\n` +
+    `*Preferred Start Date:* ${startDate || 'Flexible'}\n` +
+    `*Notes:* ${notes || 'None'}\n\n` +
+    `_Sent via website registration form_`;
+
+  window.open(`https://wa.me/2348147409351?text=${encodeURIComponent(msg)}`, '_blank');
+}
+
+// WHATSAPP CONTACT
+function submitInquiry() {
+  const name = document.getElementById('contactName').value.trim();
+  const phone = document.getElementById('contactPhone').value.trim();
+  const email = document.getElementById('contactEmail').value.trim();
+  const subject = document.getElementById('contactSubject').value.trim();
+  const message = document.getElementById('contactMessage').value.trim();
+
+  if(!name || !message) {
+    alert('Please fill in your name and message.');
+    return;
+  }
+
+  const msg = `*INQUIRY - Ibraheem Educational Academy*\n\n` +
+    `*Name:* ${name}\n` +
+    `*Phone:* ${phone || 'Not provided'}\n` +
+    `*Email:* ${email || 'Not provided'}\n` +
+    `*Subject:* ${subject || 'General Inquiry'}\n\n` +
+    `*Message:*\n${message}\n\n` +
+    `_Sent via website contact form_`;
+
+  window.open(`https://wa.me/2348147409351?text=${encodeURIComponent(msg)}`, '_blank');
+}
+
+// CHATBOT
+const chatOpen = { state: false };
+
+function toggleChat() {
+  chatOpen.state = !chatOpen.state;
+  document.getElementById('chatPanel').classList.toggle('open', chatOpen.state);
+  const icon = document.getElementById('chatIcon');
+  icon.className = chatOpen.state ? 'fas fa-times' : 'fas fa-comment-dots';
+}
+
+const knowledgeBase = {
+  register: "To register, fill the registration form on this page and submit. Your details go to us directly via WhatsApp. You can also call or WhatsApp us on 08147409351. Admissions are currently open!",
+  timing: "Classes run Saturday to Wednesday, from 6:00 PM to 8:00 PM (Isha'i time). Thursday and Friday are off.",
+  age: "Children aged 6 and above can join. No upper age limit. Prior memorization experience is not required.",
+  location: "We are at Raodatul Jannah Mosque, Ogunnaike Estate, Second Four Square, Erunwen, Ikorodu, Lagos.",
+  bring: "Students should bring their own Qur'an (Mushaf), a notepad, and a pen. Girls should wear hijab. Islamic attire is required.",
+  fee: "Please contact us directly for current fee information: 08147409351 or 08106982055.",
+  arabic: "Basic Arabic reading helps but is not required. Students who cannot yet read Arabic will receive support alongside the Hifz program.",
+  default: "I'm not sure about that. Please contact us directly on 08147409351 or WhatsApp for more details. We're happy to help!"
+};
+
+function getResponse(input) {
+  const q = input.toLowerCase();
+  if(q.includes('register') || q.includes('enroll') || q.includes('admission') || q.includes('sign up')) return knowledgeBase.register;
+  if(q.includes('time') || q.includes('hour') || q.includes('schedule') || q.includes('when')) return knowledgeBase.timing;
+  if(q.includes('age') || q.includes('old') || q.includes('years')) return knowledgeBase.age;
+  if(q.includes('where') || q.includes('location') || q.includes('address') || q.includes('mosque') || q.includes('ikorodu')) return knowledgeBase.location;
+  if(q.includes('bring') || q.includes('need') || q.includes('require') || q.includes('item')) return knowledgeBase.bring;
+  if(q.includes('fee') || q.includes('cost') || q.includes('price') || q.includes('pay') || q.includes('how much')) return knowledgeBase.fee;
+  if(q.includes('arabic') || q.includes('read') || q.includes('level') || q.includes('beginner')) return knowledgeBase.arabic;
+  return knowledgeBase.default;
+}
+
+function addMessage(text, isUser) {
+  const msgs = document.getElementById('chatMessages');
+  const div = document.createElement('div');
+  div.className = `chat-msg ${isUser ? 'user' : 'bot'}`;
+  if(!isUser) {
+    div.innerHTML = `<div class="chat-avatar-small"><i class="fas fa-book-quran"></i></div><div class="chat-bubble">${text}</div>`;
+  } else {
+    div.innerHTML = `<div class="chat-bubble">${text}</div>`;
+  }
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function showTyping() {
+  const msgs = document.getElementById('chatMessages');
+  const div = document.createElement('div');
+  div.className = 'chat-msg bot'; div.id = 'typing';
+  div.innerHTML = `<div class="chat-avatar-small"><i class="fas fa-book-quran"></i></div><div class="chat-bubble"><div class="chat-typing"><span></span><span></span><span></span></div></div>`;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function hideTyping() {
+  const t = document.getElementById('typing');
+  if(t) t.remove();
+}
+
+function sendChat() {
+  const input = document.getElementById('chatInput');
+  const text = input.value.trim();
+  if(!text) return;
+  addMessage(text, true);
+  input.value = '';
+  document.getElementById('quickReplies').style.display = 'none';
+  showTyping();
+  setTimeout(() => {
+    hideTyping();
+    addMessage(getResponse(text), false);
+  }, 900 + Math.random() * 400);
+}
+
+function quickReply(text) {
+  document.getElementById('chatInput').value = text;
+  sendChat();
+}
+</script>
+</body>
+</html>
