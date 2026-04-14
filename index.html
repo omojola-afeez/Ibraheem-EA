@@ -5,18 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>أكاديمية إبراهيم التعليمية</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
         <h1>أكاديمية إبراهيم التعليمية</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">عن الأكاديمية</a></li>
+                <li><a href="#programs">البرامج</a></li>
+                <li><a href="#testimonials">التوصيات</a></li>
+                <li><a href="#registration">التسجيل</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+        </nav>
     </header>
-    <main>
-        <section>
-            <p>مرحبا بكم في أكاديمية إبراهيم التعليمية، حيث يمكنك التعلم عبر الإنترنت.</p>
-        </section>
-    </main>
+    <section id="hero">
+        <h2>مرحبا بكم في أكاديمية إبراهيم التعليمية</h2>
+    </section>
+    <section id="about">
+        <h3>عن أكاديميتنا</h3>
+        <p>نحن نقدم مجموعة متنوعة من البرامج التعليمية لمساعدتك على النجاح.</p>
+    </section>
+    <section id="programs">
+        <h3>برامجنا</h3>
+        <ul>
+            <li>برنامج 1</li>
+            <li>برنامج 2</li>
+            <li>برنامج 3</li>
+        </ul>
+    </section>
+    <section id="testimonials">
+        <h3>آراء الطلاب</h3>
+        <p>آراء طلابنا هي دليلكم على جودة التعليم لدينا.</p>
+    </section>
+    <section id="registration">
+        <h3>قم بالتسجيل الآن</h3>
+        <form>
+            <label for="name">الاسم:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">البريد الإلكتروني:</label>
+            <input type="email" id="email" name="email" required>
+            <button type="submit">تسجيل</button>
+        </form>
+    </section>
+    <section id="contact">
+        <h3>اتصل بنا</h3>
+        <p>يمكنك الاتصال بنا عبر البريد الإلكتروني أو الهاتف.</p>
+    </section>
     <footer>
-        <p>جميع الحقوق محفوظة لأكاديمية إبراهيم التعليمية.</p>
+        <p>جميع الحقوق محفوظة © 2026 أكاديمية إبراهيم التعليمية</p>
     </footer>
+    <div id="chatbot">
+        <p>مرحبًا، كيف يمكنني مساعدتك؟</p>
+    </div>
 </body>
 </html>
